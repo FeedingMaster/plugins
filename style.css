@@ -1,0 +1,14 @@
+.trigger,.trigger2{
+    padding: 10px;
+    background-color: rgb(55, 136, 213);
+}
+.body, .body2{
+    padding: 50px 10px;
+    background-color: rgb(208, 86, 86);
+    margin-bottom: 10px;
+    display: none;
+}
+
+.body.is-open,.body2.is-open{
+    display: block;
+}

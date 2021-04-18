@@ -12,7 +12,7 @@ window.addEventListener('load', ()=>{
         trigger: ".trigger2",
         body: ".body2",
         actionClass:"is-open",
-        autoClose: true
+        autoClose: false
     }
     initAccordion(accordion2)
 })
@@ -36,7 +36,7 @@ function initAccordion(obj){
             }
 
             let body =  trigger.nextElementSibling
-            console.log(body)
+
             if(hasClass(body,actionClass)){ 
                 body.classList.remove(actionClass)
                 trigger.classList.remove(actionClass)

@@ -22,7 +22,6 @@ function initAccordion(obj){
     let contentBody = selectElement(obj.body)
     let actionClass = obj.actionClass
     triggers.forEach(trigger => { 
-
         trigger.addEventListener("click",(e)=>{
             e.preventDefault()
             trigger = e.target
@@ -37,12 +36,8 @@ function initAccordion(obj){
 
             let body =  trigger.nextElementSibling
 
-            if(hasClass(body,actionClass)){ 
+            if(hasClass(body,actionClass) || hasClass(trigger, actionClass)){ 
                 body.classList.remove(actionClass)
-                trigger.classList.remove(actionClass)
-                return
-            }
-            if (hasClass(trigger, actionClass)) {
                 trigger.classList.remove(actionClass)
                 return
             }
@@ -57,14 +52,12 @@ function initAccordion(obj){
 
 
 // Global Helper Functions
-
 function selectElement(selector){
     let element = document.querySelectorAll(selector)
     return element
 }
 
 function sanitizeSelector(selector){
-    if (selector == null || selector == undefined) return selector
     let element = selector.replace(/[\.\#]/, "")
     return element
 }
